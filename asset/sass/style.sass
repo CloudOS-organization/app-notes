@@ -1,0 +1,104 @@
+notes-app .frame
+    background-color: hsl(58, 88%, 72%)
+
+    &.expanded
+        background-color: hsl(58, 88%, 72%)
+
+    .head
+        background-color: hsl(58, 88%, 72%)
+
+        .actions .action
+            background-color: hsl(58, 88%, 55%)
+
+            &:hover
+                background-color: hsl(58, 88%, 47%)
+
+        .title
+            color: hsl(58, 88%, 32%)
+            font-weight: 500
+
+    .body
+        display: flex
+        flex-wrap: wrap
+        gap: 20px
+        padding: 15px
+        margin: 5px
+        margin-top: 0
+        overflow-y: auto
+        max-height: calc(100% - 38px - 5px)
+        position: relative
+
+        &:before
+            content: ''
+            display: block
+            position: fixed
+            left: 0
+            right: 0
+            top: 38px
+            width: calc(100% - 8px - 5px)
+            height: 15px
+            background: linear-gradient(to bottom, hsl(58, 88%, 72%), transparent)
+
+        &:after
+            content: ''
+            display: block
+            position: fixed
+            left: 0
+            right: 0
+            bottom: 5px
+            width: calc(100% - 8px - 5px)
+            height: 15px
+            background: linear-gradient(to top, hsl(58, 88%, 72%), transparent)
+
+        &::-webkit-scrollbar,
+        &::-webkit-scrollbar-corners
+            background-color: transparent
+            width: 8px
+            height: 8px
+
+        &::-webkit-scrollbar-track
+            background-color: transparent
+
+        &::-webkit-scrollbar-thumb
+            background-color: hsl(58, 53%, 55%, 50%)
+            border-radius: 4px
+
+            &:hover
+                background-color: hsl(58, 53%, 55%, 80%)
+
+        .note
+            background-color: hsl(0, 0%, 100%)
+            border-radius: 8px
+            width: 800px
+            margin: 20px auto
+            padding: 80px 60px
+            aspect-ratio: 1/1.4142
+            overflow: hidden
+
+            textarea,
+            input
+                padding: 0
+                margin: 0
+                color: hsl(0, 0%, 20%)
+                font-family: Source Serif Pro, serif
+                outline: none
+                border: none
+                resize: none
+
+                &::placeholder
+                    color: hsl(0, 0%, 85%)
+
+                &.headline
+                    width: 100%
+                    height: 40px
+                    margin-bottom: 50px
+                    font-weight: 600
+                    font-size: 30px
+                    line-height: 40px
+
+                &.content
+                    width: 100%
+                    height: 100%
+                    font-weight: 500
+                    font-size: 18px
+                    line-height: 26px
